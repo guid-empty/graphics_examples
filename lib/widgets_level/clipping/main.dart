@@ -59,15 +59,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class WavePainter extends CustomPainter {
+  static const int WAVE_LENGTH = 100;
+
   AnimationController animationController;
 
   WavePainter({this.animationController});
 
-  double getSinHeight(double sinFactor) => sinFactor * 20 + 200;
-
   Offset getOffset({@required double horizontal, @required double sin}) => Offset(horizontal, getSinHeight(sin));
 
-  static const int WAVE_LENGTH = 100;
+  double getSinHeight(double sinFactor) => sinFactor * 20 + 200;
 
   @override
   void paint(Canvas canvas, Size size) {
