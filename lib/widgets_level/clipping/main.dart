@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math.dart' as Vector;
 
 void main() => runApp(MyApp());
 
@@ -64,12 +63,21 @@ class WavePainter extends CustomPainter {
 
   WavePainter({this.animationController});
 
+  double getSinHeight(double sinFactor) => sinFactor * 20 + 200;
+
+  Offset getOffset({@required double horizontal, @required double sin}) => Offset(horizontal, getSinHeight(sin));
+
+  static const int WAVE_LENGTH = 100;
+
   @override
   void paint(Canvas canvas, Size size) {
     List<Offset> polygonOffsets = [];
     for (int i = 0; i <= size.width.toInt(); i++) {
-      polygonOffsets.add(Offset((animationController?.value ?? 0) * 100 + i.toDouble(),
-          math.sin(3 * i % 360 * Vector.degrees2Radians) * 20 + size.height));
+      final partOfWave = (i % WAVE_LENGTH) / WAVE_LENGTH;
+      polygonOffsets.add(getOffset(
+        horizontal: (animationController.value * WAVE_LENGTH) + i.toDouble(),
+        sin: math.sin(partOfWave * math.pi * 2),
+      ));
     }
     var paint = Paint()
       ..style = PaintingStyle.fill

@@ -1,8 +1,5 @@
-import 'package:flare_flutter/flare_actor.dart';
-import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:raw_graphics/flare.actions.panel/products.dart';
 import 'package:smart_flare/smart_flare.dart';
 
 class Home extends StatefulWidget {
