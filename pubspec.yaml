@@ -27,6 +27,7 @@ flutter:
     - assets/flare/justtry.squares.flr
     - assets/flare/justtry.basics.clipping.flr
     - assets/flare/justtry.basics.strokes.flr
+    - assets/flare/justtry.progress_indicator.flr
 
   fonts:
     - family: Billy
