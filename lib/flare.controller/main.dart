@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
-        backgroundColor: Color(0xFF5451E5),
+        backgroundColor: Color(0xFF2196F3),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         body: Home(),
       ),
